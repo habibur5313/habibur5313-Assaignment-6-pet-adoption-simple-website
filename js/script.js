@@ -12,8 +12,8 @@ const displayBtn =(buttons) => {
                     buttons.forEach((item) => {
                                         
                                         const div = document.createElement('div')
-                                        div.innerHTML= `
-                                        <div  onclick="displayOneBtn('${item.category}')" class= "flex gap-5 px-20 py-5 w-full border rounded-xl ">
+                                div.innerHTML= `
+                                        <div id= "btn-${item.category}" onclick="displayOneBtn('${item.category}')" class= "category-btn flex gap-5 px-20 py-5 w-full border rounded-xl ">
                                         <img src=${item.category_icon}/>
                                         <button  class="text-3xl font-semibold">${item.category}</button>
                                         </div>
@@ -25,16 +25,29 @@ const displayBtn =(buttons) => {
 }
 
 const loadCategoryVideos = (category) => {
+  document.getElementById('spinner').classList.add('hidden')
                     fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
                     .then(res => res.json())
-                    .then(data => displayVideos(data.data)
-                    )
+                    .then(data => {
+                      const allBtn = document.getElementsByClassName('category-btn');
+                for(let item of allBtn){
+                  item.classList.remove('bg-green-100')
+                  }
+                  const activeBtn = document.getElementById(`btn-${category}`)
+                  activeBtn.classList.add('bg-green-100')
+                  
+                            displayVideos(data.data)
+                    
+})
                     .catch(err => console.error(err))
                     
 }
 
 const displayOneBtn = (category) => {
-                    loadCategoryVideos(category)
+  document.getElementById('spinner').classList.remove('hidden')
+                    setTimeout(() => {
+                      loadCategoryVideos(category)
+                    },2000)
                     
 }
 
@@ -53,6 +66,7 @@ const displayOneBtn = (category) => {
 
                     //                   *DISPLAY VIDEOS*               //
 const loadVideos = (category) => {
+  document.getElementById('spinner').classList.add('hidden')
                  fetch(`https://openapi.programming-hero.com/api/peddy/pets?category/${category}`)
                  .then(res => res.json())
                  .then(data => displayVideos(data.pets)
@@ -65,37 +79,38 @@ const loadVideos = (category) => {
 const displayVideos = (videos) => {
                     const cardContainer = document.getElementById('card-container')
                     cardContainer.innerHTML = ''
+
                     if(videos.length === 0){
-                                        cardContainer.classList.remove('grid')
-                                       cardContainer.innerHTML = `
-                                         <div class = "flex flex-col h-[400px] justify-center items-center gap-4">
-                                         <img src="images/error.webp" alt="">
-                                         <h1 class= "text-2xl font-bold "> No Content Here IN This Category</h1>
-                                         </div>
-                                        `}
-                                        else{
-                                                            cardContainer.classList.add('grid')        
-                                        }
+                            cardContainer.classList.remove('grid')
+                            cardContainer.innerHTML = `
+                              <div class = "flex flex-col h-[600px] justify-center items-center gap-4">
+                              <img src="images/error.webp" alt="">
+                              <h1 class= "text-2xl font-bold "> No Content Here IN This Category</h1>
+                              </div>
+                            `}
+                            else{
+                                                cardContainer.classList.add('grid')        
+                            }
               videos.forEach(item => {
 
                     const div = document.createElement('div')
                     div.innerHTML = `
                     <div class="card card-compact object-cover border">
-                                                                                                    <figure class= "mt-2 h-[200px]">
-                                                                                                      <img class= "h-full px-2 rounded-xl"
-                                                                                                        src=${item.image}/>
-                                                                                                    </figure>
-                                                                                                    <div class="card-body">
-                                                                                                      <h2 class="card-title">${item.pet_name}</h2>
-                                                                                                      <p>Breed : ${item.breed ? item.breed : 'Not Available'}</p>
-                                                                                                      <p>Birth : ${item.date_of_birth? item.date_of_birth:'Not Available'}</p>
-                                                                                                      <p>Gender : ${item.gender?item.gender:'Not Available'}</p>
-                                                                                                      <p>Price : ${item.price ? item.price: 'Not Available'}</p>
-                                                                                                      <div class="card-actions justify-end">
-                                                                                                        <button class="btn btn-primary">Buy Now</button>
-                                                                                                      </div>
-                                                                                                    </div>
-                                                                                                  </div>
+                        <figure class= "mt-2 h-[200px]">
+                          <img class= "h-full px-2 rounded-xl"
+                            src=${item.image}/>
+                        </figure>
+                        <div class="card-body">
+                          <h2 class="card-title">${item.pet_name}</h2>
+                          <p>Breed : ${item.breed ? item.breed : 'Not Available'}</p>
+                          <p>Birth : ${item.date_of_birth? item.date_of_birth:'Not Available'}</p>
+                          <p>Gender : ${item.gender?item.gender:'Not Available'}</p>
+                          <p>Price : ${item.price ? item.price: 'Not Available'}</p>
+                          <div class="card-actions justify-end">
+                            <button class="btn btn-primary">Buy Now</button>
+                          </div>
+                        </div>
+                      </div>
                     `
                     cardContainer.appendChild(div)
                     
@@ -103,5 +118,12 @@ const displayVideos = (videos) => {
               
 }
 
+const loadVideosCall = () => {
+  document.getElementById('spinner').classList.remove('hidden')
+  setTimeout(() => {
+    loadVideos()
+  }, 2000);
+}
+
 loadBtn()
-loadVideos()
+loadVideosCall()

@@ -8,6 +8,23 @@
                     <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.min.css" rel="stylesheet" type="text/css" />
                     <script src="https://cdn.tailwindcss.com"></script>
                     <script src="https://kit.fontawesome.com/b0e41e6375.js" crossorigin="anonymous"></script>
+
+                    <style>
+                      .loader {
+                                    border: 16px solid #f3f3f3; /* Light grey */
+                                    border-top: 16px solid #3498db; /* Blue */
+                                    border-radius: 50%;
+                                    width: 120px;
+                                    height: 120px;
+                                    animation: spin 2s linear infinite;
+                                  }
+
+                                  @keyframes spin {
+                                    0% { transform: rotate(0deg); }
+                                    100% { transform: rotate(360deg); }
+                                  }
+
+                    </style>
 </head>
 <body>
 
@@ -46,7 +63,9 @@
                     
                                                                 </h1>
                                                                 <p>pore lekmu</p>
-                                                                <button class="px-5 py-2 border rounded-xl bg-green-700 font-medium text-white">View More</button>
+                                                                <a href="index.html#main-section">
+                                                                  <button class="px-5 py-2 border rounded-xl bg-green-700 font-medium text-white">View More</button>
+                                                                </a>
                                                               </div>
                                                             </div>
                                                           </div>
@@ -56,7 +75,7 @@
                     </section>
 
                     <!-- main topic Section -->
-                     <section class="w-11/12 mx-auto">
+                     <section id="main-section" class="w-11/12 mx-auto">
                                         <div class="text-center mt-14">
                                                             <h1 class="text-4xl font-bold">Adopt Your Best Friend</h1>
                                                             <p>pore lekmu</p>
@@ -69,8 +88,12 @@
                                                             <button class="py-3 px-8 border rounded-xl bg-green-700 text-white font-medium">Sort by Price</button>
                                         </div>
 
+                                       <div class="flex justify-center items-center">
+                                        <div id="spinner" class="loader hidden"></div>
+                                       </div>
                                         <div   class="flex flex-col lg:flex-row gap-4 mt-10">
-                                                            <div  class=" border rounded-xl">
+
+                                                            <div  class=" lg:w-9/12  border rounded-xl">
                                                                   <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2 my-4 gap-4 ">
                                                                                 <!-- <div class="card card-compact bg-base-100 w-96 shadow-xl">
                                                                                                     <figure>
@@ -88,7 +111,7 @@
                                                                                                   </div> -->
                                                                   </div>
                                                             </div>
-                                                            <div class="border">
+                                                            <div class="border w-3/12">
  <h1>adsfjothifqoawjslads <br>asdjljkagsl</h1>
                                                             </div>
                                         </div>
