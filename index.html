@@ -29,8 +29,8 @@
 <body>
 
                     <!-- header Section -->
-                <header class="container mx-auto mt-10">
-                       <nav class="flex justify-between items-center w-11/12 mx-auto">
+                <header class="container mx-auto mt-6 lg:mt-10">
+                       <nav class="flex flex-col md:flex-row border-b md:border-none gap-3 justify-between items-center w-11/12 mx-auto">
                                         <div class="flex gap-3 items-center">
                                                             <div class="w-7">
                                                                                 <img class="w-full" src="images/logo.webp" alt="">
@@ -44,78 +44,81 @@
                                                                                 <a href="contact.html"><li>Contact</li></a>
                                                             </ul>
                                         </div>
-                                        <div class="py-3 px-4 border rounded-full">
+                                        <div class="py-3 px-4 border rounded-full mb-4 md:mb-0">
                                                             <i class="fa-regular fa-user"></i>
                                         </div>
+                                      
                        </nav>
                 </header>  
 
                 <!-- main Section -->
                 <main class="container mx-auto">
-                    <!-- first Section -->
+                    <!-- banner Section -->
                     <section>
                                         <div class="hero ">
                                                             <div class="hero-content text-center">
-                                                              <div class="space-y-4">
-                                                                <h4 class="text-2xl font-semibold text-gray-500">Bringing Families Together</h4>
-                                                                <h1 class="py-2 text-5xl font-extrabold">
+                                                              <div class="lg:space-y-4">
+                                                                <h4 class="text-xl md:text-2xl font-semibold text-gray-500">Bringing Families Together</h4>
+                                                                <h1 class="py-2 text-2xl md:text-4xl lg:text-5xl font-extrabold">
                                                                                 Your Path to Adoption <br> Starts Here
                     
                                                                 </h1>
-                                                                <p>pore lekmu</p>
+                                                                <p class="pb-3">pore lekmu</p>
                                                                 <a href="index.html#main-section">
                                                                   <button class="px-5 py-2 border rounded-xl bg-green-700 font-medium text-white">View More</button>
                                                                 </a>
                                                               </div>
                                                             </div>
                                                           </div>
-                                                          <div class="w-6/12 mx-auto">
-                                                            <img src="images/pet.webp" alt="">
+                                                          <div class="md:w-6/12 w-11/12  mx-auto">
+                                                            <img class="" src="images/pet.webp" alt="">
                                                           </div>
                     </section>
 
                     <!-- main topic Section -->
                      <section id="main-section" class="w-11/12 mx-auto">
-                                        <div class="text-center mt-14">
+                                        <div class="text-center mt-6 md:mt-14">
                                                             <h1 class="text-4xl font-bold">Adopt Your Best Friend</h1>
                                                             <p>pore lekmu</p>
                                         </div>
-                                        <div id="button-container" class="flex justify-between gap-4">
+                                        <div id="button-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-between gap-4">
                                                            
                                         </div>
                                         <div class="flex justify-between items-center mt-10">
-                                                            <h1 class="text-3xl font-semibold">Best Deal For you</h1>
-                                                            <button class="py-3 px-8 border rounded-xl bg-green-700 text-white font-medium">Sort by Price</button>
+                                                            <h1 class="text-xl md:text-2xl lg:text-3xl font-semibold">Best Deal For you</h1>
+                                                            <button class="py-3 px-3 md:px-5 lg:px-8 border rounded-xl bg-green-700 text-white font-medium">Sort by Price</button>
                                         </div>
 
                                        <div class="flex justify-center items-center">
                                         <div id="spinner" class="loader hidden"></div>
                                        </div>
-                                        <div   class="flex flex-col lg:flex-row gap-4 mt-10">
+                                        <div id="api-card"  class=" flex flex-col lg:flex-row gap-4 mt-10">
 
                                                             <div  class=" lg:w-9/12  border rounded-xl">
-                                                                  <div id="card-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-2 my-4 gap-4 ">
-                                                                                <!-- <div class="card card-compact bg-base-100 w-96 shadow-xl">
-                                                                                                    <figure>
-                                                                                                      <img
-                                                                                                        src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                                                                                                        alt="Shoes" />
-                                                                                                    </figure>
-                                                                                                    <div class="card-body">
-                                                                                                      <h2 class="card-title">Shoes!</h2>
-                                                                                                      <p>If a dog chews shoes whose shoes does he choose?</p>
-                                                                                                      <div class="card-actions justify-end">
-                                                                                                        <button class="btn btn-primary">Buy Now</button>
-                                                                                                      </div>
-                                                                                                    </div>
-                                                                                                  </div> -->
+                                                                  <div id="card-container" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mx-2 my-4 gap-4 ">
+                                                                                
                                                                   </div>
                                                             </div>
-                                                            <div class="border w-3/12">
- <h1>adsfjothifqoawjslads <br>asdjljkagsl</h1>
+                                                            <div id="card-image-add" class="gap-2 px-2 border grid grid-cols-2 rounded-xl lg:w-3/12  ">
+
                                                             </div>
                                         </div>
                      </section>
+                     <!-- details modal -->
+                     <button id="showModalData" class="btn hidden" onclick="my_modal_5.showModal()">open modal</button>
+              <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                <div class="modal-box">
+                 <div id="details-modal-div">
+
+                 </div>
+                  <div class="modal-action">
+                    <form method="dialog">
+                      <!-- if there is a button in form, it will close the modal -->
+                      <button class="btn">Close</button>
+                    </form>
+                  </div>
+                </div>
+              </dialog>
 
                 </main>  
 
@@ -166,3 +169,4 @@
                 <script src="js/script.js"></script>
 </body>
 </html>
+
