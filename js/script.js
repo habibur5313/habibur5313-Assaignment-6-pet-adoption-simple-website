@@ -111,7 +111,7 @@ const displayVideos = (videos) => {
                           <p class= "flex"><img src="images/Frame (3).png" alt=""> Price : ${item.price ? item.price: 'Not Available'}</p>
                           <div class=" flex justify-between gap-4">
                             <button  onclick="addImg('${item.image}')" class = "flex justify-center py-2 w-full border rounded-xl"><img src="images/Vector.png" alt=""></button>
-                            <button class = "w-full py-2 border rounded-xl text-green-700">Adopt</button>
+                            <button onclick="CountdownModal()" id="myBtn" class = "w-full py-2 border rounded-xl text-green-700">Adopt</button>
                             <button onclick="detailsModal('${item.image}','${item.pet_name}','${item.breed}','${item.date_of_birth}','${item.gender}','${item.price}')" class = " w-full py-2 border rounded-xl text-green-700">Details</button>
                           </div>
                         </div>
@@ -150,6 +150,26 @@ const addImg = (img) => {
                             </figure>
   `
   cardImgAdd.appendChild(div)
+  
+}
+
+const modal = document.getElementById("myModal");
+const CountdownModal = () => {
+  
+  modal.classList.remove('hidden')
+  const count = document.getElementById("countdown");
+    let countTime = 3; 
+
+    let countInterval = setInterval(function() {
+        count.textContent = countTime 
+        countTime--;
+
+        if (countTime < 0) {
+            clearInterval(countInterval);
+            modal.style.display = "none";
+        }
+    }, 1000);
+  
   
 }
 
