@@ -155,8 +155,14 @@ const addImg = (img) => {
 
 const modal = document.getElementById("myModal");
 const CountdownModal = () => {
-  
-  modal.classList.remove('hidden')
+   const modalContainer = document.getElementById("adopt-modal-div")
+       modalContainer.innerHTML = `<h1 class="">Congrats</h1>
+                <p>Adoption Process Is Start For your Pet</p>
+                  <p id="countdown"></p>`
+
+       document.getElementById('my_modal_2').showModal()
+
+       // modal.classList.remove('hidden')
   const count = document.getElementById("countdown");
     let countTime = 3; 
 
@@ -166,7 +172,7 @@ const CountdownModal = () => {
 
         if (countTime < 0) {
             clearInterval(countInterval);
-            modal.style.display = "none";
+            // modal.style.display = "none";
         }
     }, 1000);
   
