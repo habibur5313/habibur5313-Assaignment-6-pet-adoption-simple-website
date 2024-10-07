@@ -14,9 +14,10 @@
                                     border: 16px solid #f3f3f3; /* Light grey */
                                     border-top: 16px solid #3498db; /* Blue */
                                     border-radius: 50%;
-                                    width: 120px;
-                                    height: 120px;
+                                    width: 80px;
+                                    height: 80px;
                                     animation: spin 2s linear infinite;
+                                    margin-bottom: 20px;
                                   }
 
                                   @keyframes spin {
@@ -99,13 +100,14 @@
                                                                                 
                                                                   </div>
                                                             </div>
-                                                            <div id="card-image-add" class="gap-2 px-2 border grid grid-cols-2 rounded-xl lg:w-3/12  ">
+                                                            <div class="px-2 border  rounded-xl lg:w-3/12  ">
+                                                              <div id="card-image-add" class="grid grid-cols-2 gap-2 " >
 
+                                                              </div>
                                                             </div>
                                         </div>
                      </section>
                      <!-- details modal -->
-                     <button id="showModalData" class="btn hidden" onclick="my_modal_5.showModal()">open modal</button>
               <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                 <div class="modal-box">
                  <div id="details-modal-div">
@@ -121,29 +123,17 @@
               </dialog>
 
                      <!-- adopt modal -->
-                     <button id="showModalData2" class="btn hidden" onclick="my_modal_2.showModal()">open modal</button>
+                     <!-- <button id="showModalData2" class="btn hidden" onclick="my_modal_2.showModal()">open modal</button> -->
               <dialog id="my_modal_2" class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box">
-                 <div id="adopt-modal-div">
+                <div  class="modal-box">
+                 <div id="adopt-modal-div" class="flex flex-col space-y-3 justify-center items-center">
 
                  </div>
-                  <div class="modal-action">
-                    <form method="dialog">
-                      <!-- if there is a button in form, it will close the modal -->
-                      <button class="btn">Close</button>
-                    </form>
-                  </div>
+                  
+                    
+                  
                 </div>
               </dialog>
-
-
-              <!-- <div id="myModal" class="border max-w-72 mx-auto hidden absolute top-52">
-              <div class="modal-content flex flex-col justify-center items-center">
-                <h1 class="">Congrats</h1>
-                <p>Adoption Process Is Start For your Pet</p>
-                  <p id="countdown"></p>
-                  </div>
-                  </div> -->
 
                 </main>  
 
