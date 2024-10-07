@@ -181,6 +181,32 @@ const CountdownModal = () => {
   
 }
 
+const SortPetsByPrice = async() => {
+  const allBtn = document.getElementsByClassName('category-btn');
+                for(let item of allBtn){
+                  item.classList.remove('bg-green-100')
+                  }
+  document.getElementById('api-card').classList.remove('hidden')
+  document.getElementById('spinner').classList.add('hidden')
+  try {
+      const res = await fetch('https://openapi.programming-hero.com/api/peddy/pets');
+      const data = await res.json();
+      const sortPets = data.pets.sort((a, b) => a.price - b.price);
+      displayVideos(sortPets);
+  }
+   catch (error) {
+      console.error( error);
+  }
+}
+
+const sortCall = () => {
+  document.getElementById('api-card').classList.add('hidden')
+  document.getElementById('spinner').classList.remove('hidden')
+  setTimeout(() => {
+    SortPetsByPrice()
+  }, 1000);
+}
+
 const loadVideosCall = () => {
   document.getElementById('api-card').classList.add('hidden')
   document.getElementById('spinner').classList.remove('hidden')
