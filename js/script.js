@@ -56,18 +56,6 @@ const displayOneBtn = (category) => {
                     
 }
 
-// {
-//                     "petId": 4,
-//                     "breed": "Holland Lop",
-//                     "category": "Rabbit",
-//                     "date_of_birth": "2023-06-30",
-//                     "price": 200,
-//                     "image": "https://i.ibb.co.com/4g3Jrjf/pet-4.jpg",
-//                     "gender": "Female",
-//                     "pet_details": "This adorable female Holland Lop rabbit, born on June 30, 2023, is known for her calm and gentle nature. She thrives in quiet environments and enjoys being handled with care. Priced at $200, she is an ideal pet for those looking for a low-maintenance, friendly rabbit. Note that she is not vaccinated.",
-//                     "vaccinated_status": "Not",
-//                     "pet_name": "Nibbles"
-//                 }
 
                     //                   *DISPLAY VIDEOS*               //
 const loadVideos = (category) => {
@@ -78,7 +66,7 @@ const loadVideos = (category) => {
                  .then(data => displayVideos(data.pets)
                  )
                  .catch(err => console.error(err))
-                 console.log(category);
+                 
                  
 }
 
@@ -98,8 +86,7 @@ const displayVideos = (videos) => {
                                                 cardContainer.classList.add('grid')        
                             }
               videos.forEach(item => {
-                console.log(item.pet_details);
-                
+         
                     const div = document.createElement('div')
                     div.innerHTML = `
                     <div class="card card-compact object-cover border h-full">
@@ -116,7 +103,8 @@ const displayVideos = (videos) => {
                           <div class=" flex justify-between gap-4">
                             <button  onclick="addImg('${item.image}')" class = "flex justify-center py-2 w-full border  rounded-xl"><img class="w-[30px]" src="images/Vector.png" alt=""></button>
                             <button onclick="CountdownModal()" id="myBtn" class = "w-full py-2 border rounded-xl text-xl font-semibold text-green-700">Adopt</button>
-                            <button onclick="detailsModal('${item.image}','${item.pet_name}','${item.breed}','${item.date_of_birth}','${item.gender}','${item.price}','${item.vaccinated_status}','${item.pet_details}')" class = " font-semibold text-xl w-full py-2 border rounded-xl text-green-700">Details</button>
+                             <button onclick="detailsModal('${item.image}','${item.pet_name}','${item.breed}','${item.date_of_birth}','${item.gender}','${item.price}')" class = " font-semibold text-xl w-full py-2 border rounded-xl text-green-700">Details</button>
+                            
                           </div>
                         </div>
                       </div>
@@ -126,8 +114,13 @@ const displayVideos = (videos) => {
               });
               
 }
+
+
+
 // {
-//   "petId": 1,
+ 
+
+// "petId": 1,
 //   "breed": "Golden Retriever",
 //   "category": "Dog",
 //   "date_of_birth": "2023-01-15",
@@ -138,9 +131,11 @@ const displayVideos = (videos) => {
 //   "vaccinated_status": "Fully",
 //   "pet_name": "Sunny"
 // }
+
+
 const detailsModal = (one, two, three, four, five, six, seven, eight) => {
   const modalContainer = document.getElementById("details-modal-div")
-       modalContainer.innerHTML = `
+  modalContainer.innerHTML = `
                                 <img class= "w-full rounded-xl" src = ${one}/> 
                                 <div class="space-y-2">
                                 <h2 class="text-2xl font-semibold mt-3">${two}</h2>
@@ -161,7 +156,6 @@ const detailsModal = (one, two, three, four, five, six, seven, eight) => {
                           </div>
                          
        `
-
 
         document.getElementById('my_modal_5').showModal()
   
