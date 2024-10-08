@@ -66,7 +66,7 @@ const displayVideos = (videos) => {
                             cardContainer.innerHTML = `
                               <div class = "flex flex-col h-[400px] sm:h-[600px] justify-center items-center gap-4">
                               <img src="images/error.webp" alt="">
-                              <h1 class= "text-2xl font-bold "> No Content Here IN This Category</h1>
+                              <h1 class= "text-2xl md:text-3xl lg:text-4xl font-bold "> No Information Here IN This Category</h1>
                               </div>
                             `}
                             else{
@@ -86,12 +86,14 @@ const displayVideos = (videos) => {
                           <p class= "flex items-center  text-xl" ><img src="images/Frame.png" alt=""> Birth : ${item.date_of_birth? item.date_of_birth:'Not Available'}</p>
                           <p class= "flex items-center  text-xl"> <img src="images/Frame (1).png" alt=""> Gender : ${item.gender?item.gender:'Not Available'}</p>
                           <p class= "flex items-center  text-xl "><img src="images/Frame (3).png" alt=""> Price : ${item.price ? item.price: 'Not Available'}</p>
+                          
                           <div class=" flex justify-between gap-4">
-                            <button  onclick="addImg('${item.image}')" class = "flex justify-center py-2 w-full border  rounded-xl"><img class="w-[30px]" src="images/Vector.png" alt=""></button>
-                            <button onclick="CountdownModal()" id="myBtn" class = "w-full py-2 border rounded-xl text-xl font-semibold text-green-700">Adopt<span id="adoptSpan" class= "hidden">ed</span></button>
-                             <button onclick="detailsModal('${item.petId}')" class = " font-semibold text-xl w-full py-2 border rounded-xl text-green-700">Details</button>
+                            <button  onclick="addImg('${item.image}')" class = "bg-green-700 text-white flex justify-center py-2 w-full border text-2xl lg:text-3xl  rounded-xl ">
+                            <i class="fa-solid fa-thumbs-up "></i></button>
+                            <button onclick="CountdownModal()" id="myBtn" class = "w-full bg-green-700 text-white py-2 border rounded-xl text-xl font-semibold ">Adopt<span id="adoptSpan" class= "hidden">ed</span></button>
+                             <button onclick="detailsModalCall('${item.petId}')" class = "bg-green-700 text-white font-semibold text-xl w-full py-2 border rounded-xl ">Details</button>
+                             </div>
                             
-                          </div>
                         </div>
                       </div>
                     `
@@ -99,16 +101,16 @@ const displayVideos = (videos) => {
              });           
 }
 
-const detailsModal = (id) => {
+const detailsModalCall = (id) => {
   
   fetch(`https://openapi.programming-hero.com/api/peddy/pet/${id}`)
                  .then(res => res.json())
-                 .then(data => displaymod(data.petData))
+                 .then(data => displayModal(data.petData))
                  .catch(err => console.error(err))
                  
                 }
 
-const displaymod = (item) => {
+const displayModal = (item) => {
   const modalContainer = document.getElementById("details-modal-div")
   modalContainer.innerHTML = `
                                 <img class= "w-full rounded-xl" src = ${item.image}/> 
