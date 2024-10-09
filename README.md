@@ -20,6 +20,6 @@
 - const Keyword
 
 # Live link to the deployed project.
-assaignment-6-phero.surge.sh
+[assaignment-6-phero.surge.sh](assaignment-6-phero.surge.sh)
 
 
