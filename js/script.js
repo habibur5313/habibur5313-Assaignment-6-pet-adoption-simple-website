@@ -90,7 +90,7 @@ const displayVideos = (videos) => {
                           <div class=" flex justify-between gap-4">
                             <button  onclick="addImg('${item.image}')" class = "bg-green-700 text-white flex justify-center py-2 w-full border text-2xl lg:text-3xl  rounded-xl ">
                             <i class="fa-solid fa-thumbs-up "></i></button>
-                            <button onclick="CountdownModal()" id="myBtn" class = "w-full bg-green-700 text-white py-2 border rounded-xl text-xl font-semibold ">Adopt<span id="adoptSpan" class= "hidden">ed</span></button>
+                            <button  onclick="CountdownModal(this)" id="myBtn" class = "w-full bg-green-700 text-white py-2 border rounded-xl text-xl font-semibold ">Adopt</button>
                              <button onclick="detailsModalCall('${item.petId}')" class = "bg-green-700 text-white font-semibold text-xl w-full py-2 border rounded-xl ">Details</button>
                              </div>
                             
@@ -126,7 +126,7 @@ const displayModal = (item) => {
                           </div>
                           <p class="text-xl">vaccinated_status: ${item.vaccinated_status ? item.vaccinated_status : 'Not'}</p>
                           <div>
-                          <h1 class= "font-semibold text-2xl mb-4">Details Description</h1>
+                          <h1 class= "font-semibold text-2xl mb-4">Details Description :</h1>
                           <p class= "flex text-xl "> ${item.pet_details ? item.pet_details : 'Not Available'}</p>
                           </div>
                        </div>
@@ -147,9 +147,9 @@ const addImg = (img) => {
   
 }
 
-const CountdownModal = () => {
+const CountdownModal = (x) => {
   document.getElementById('my_modal_2').classList.remove('hidden')
-   const modalContainer = document.getElementById("adopt-modal-div")
+  const modalContainer = document.getElementById("adopt-modal-div")
        modalContainer.innerHTML = `
        <i class="fa-solid fa-handshake text-6xl text-red-500"></i>
        <h1 class="text-3xl font-bold">Congrats</h1>
@@ -170,6 +170,9 @@ const CountdownModal = () => {
             clearInterval(countInterval);
             // document.getElementById('my_modal_2').classList.add('hidden')
             document.getElementById('my_modal_2').close()
+            x.textContent = 'Adopted'
+            x.classList.add('text-[#A9A9A9]','bg-[#DCDCDC]')
+            x.disabled = true ;
           }
         }, 1000);
   
