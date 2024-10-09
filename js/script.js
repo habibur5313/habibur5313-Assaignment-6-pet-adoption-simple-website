@@ -90,7 +90,7 @@ const displayVideos = (videos) => {
                           <div class=" flex justify-between gap-4">
                             <button  onclick="addImg('${item.image}')" class = "bg-green-700 text-white flex justify-center py-2 w-full border text-2xl lg:text-3xl  rounded-xl ">
                             <i class="fa-solid fa-thumbs-up "></i></button>
-                            <button onclick="CountdownModal()" id="myBtn" class = "w-full bg-green-700 text-white py-2 border rounded-xl text-xl font-semibold ">Adopt<span id="adoptSpan" class= "hidden">ed</span></button>
+                            <button onclick="CountdownModal(this)" id="myBtn" class = "w-full bg-green-700 text-white py-2 border rounded-xl text-xl font-semibold ">Adopt</button>
                              <button onclick="detailsModalCall('${item.petId}')" class = "bg-green-700 text-white font-semibold text-xl w-full py-2 border rounded-xl ">Details</button>
                              </div>
                             
@@ -147,7 +147,7 @@ const addImg = (img) => {
   
 }
 
-const CountdownModal = () => {
+const CountdownModal = (x) => {
   document.getElementById('my_modal_2').classList.remove('hidden')
    const modalContainer = document.getElementById("adopt-modal-div")
        modalContainer.innerHTML = `
@@ -170,6 +170,9 @@ const CountdownModal = () => {
             clearInterval(countInterval);
             // document.getElementById('my_modal_2').classList.add('hidden')
             document.getElementById('my_modal_2').close()
+          x.textContent = 'Adopted'
+            x.classList.add('text-[#A9A9A9]','bg-[#DCDCDC]')
+            x.disabled = true ;
           }
         }, 1000);
   
