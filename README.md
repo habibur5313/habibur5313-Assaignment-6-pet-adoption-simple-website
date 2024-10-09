@@ -20,7 +20,6 @@
 - const Keyword
 
 # Live link to the deployed project.
-[Live link](https://assaignment-6-phero.surge.sh/)
-[your llink](https://youtu.be/uvTcd-VlM64?si=KQZngUQtYKItp3w2)
+[https://assaignment-6-phero.surge.sh/](https://assaignment-6-phero.surge.sh/)
 
 
