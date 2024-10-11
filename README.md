@@ -7,11 +7,11 @@
 -  Simple html, css and simple js are used to create this website.
 
 # 5 key features of the project.
--User Authentication System.
--Error Handling
--Database Interactions.
--Password Security.
--Input Validation.
+- User Authentication System.
+- Error Handling
+- Database Interactions.
+- Password Security.
+- Input Validation.
 
 # ES6 features used.
 - Promise.
