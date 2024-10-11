@@ -15,27 +15,59 @@
 <body>
 
                     <!-- header Section -->
-                <header  class="container mx-auto mt-6 lg:mt-10">
-                       <nav class="flex flex-col md:flex-row border-b md:border-none gap-3 justify-between items-center w-11/12 mx-auto">
-                                        <div class="flex gap-3 items-center">
-                                                            <div class="w-7">
-                                                                                <img class="w-full" src="images/logo.webp" alt="">
-                                                            </div>
-                                                            <h1 class="text-4xl font-bold">Peddy</h1>
-                                        </div>
-                                        <div>
-                                                            <ul class="flex gap-6 text-gray-500 font-medium">
-                                                                                <a href="home.html"><li>Home</li></a>
-                                                                                <a href="shop.html"><li>Shop</li></a>
-                                                                                <a href="contact.html"><li>Contact</li></a>
-                                                            </ul>
-                                        </div>
-                                        <div class="py-3 px-4 border rounded-full mb-4 md:mb-0">
-                                                            <i class="fa-regular fa-user"></i>
-                                        </div>
-                                      
-                       </nav>
-                </header>  
+                <header  class="container mx-auto mt-3 lg:mt-4">  
+                       <div class="navbar w-11/12  mx-auto">
+                        <div class="navbar-start">
+                          <div class="dropdown ">
+                            <div tabindex="0" role="button" class="btn btn-ghost md:hidden">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="h-5 w-5"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M4 6h16M4 12h16M4 18h16" />
+                              </svg>
+                            </div>
+                            <ul
+                              tabindex="0"
+                              class="menu menu-sm dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                              <!-- <ul class="flex gap-6 text-gray-500 font-medium"> -->
+                                <a href="home.html"><li>Home</li></a>
+                                <a href="shop.html"><li>Shop</li></a>
+                                <a href="contact.html"><li>Contact</li></a>
+                                 <!-- </ul> -->
+                                </ul>
+                              </li>
+                            
+                            </ul>
+                          </div>
+                          <div class="flex gap-1 md:gap-3 items-center">
+                            <div class="w-7">
+                                  <img class="w-full" src="images/logo.webp" alt="">
+                            </div>
+                            <h1 class="text-4xl font-bold">Peddy</h1>
+                          </div>
+                        </div>
+                        <div class="navbar-center hidden md:flex">
+                          <ul class="menu menu-horizontal px-1 gap-6 text-gray-500 font-medium">
+                            <a href="home.html"><li>Home</li></a>
+                            <a href="shop.html"><li>Shop</li></a>
+                            <a href="contact.html"><li>Contact</li></a>
+                            
+                          </ul>
+                        </div>
+                        <div class="navbar-end mt-4">
+                          <div class="py-3 px-4 border rounded-full mb-4 md:mb-0">
+                            <i class="fa-regular fa-user"></i></div>
+                        </div>
+                      </div>
+
+                      </header>  
 
                 <!-- main Section -->
                 <main class="container mx-auto">
