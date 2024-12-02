@@ -23,4 +23,7 @@
 # Live link to the deployed project.
 [https://assaignment-6-phero.surge.sh/](https://assaignment-6-phero.surge.sh/)
 
+# MARK
+- 60 out of 60
+
 
